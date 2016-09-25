@@ -1,0 +1,22 @@
+.jumbotron
+{
+height: 1000px;
+font-family:cursive;
+background-image: url(laptop.jpg);
+height:1000px;
+background-size: cover;
+}
+.headertext{
+text-align: center;    
+} 
+h3{
+    
+    color:black
+}
+body{
+    background-color: black;
+
+}
+.item{
+  border-radius: 25%; 
+}
