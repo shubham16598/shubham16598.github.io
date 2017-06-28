@@ -35,11 +35,3 @@
     text-align: center;
     margin-top: 20vh;
 }
-.downicon{
-    text-align: center;
-    margin: 40px;
-    transition: all 0.5s;
-}
-.downicon:hover{
- font-size: 20px;
-}
