@@ -1,0 +1,45 @@
+
+.shadow{
+  font-family:pacifico, sans-serif;
+  font-size:7em;
+  text-align:center;
+  text-shadow:  6px 5px #A9A9A9;
+}
+.shadow1{
+  margin-top: 20px;
+  font-family:pacifico, sans-serif;
+  font-size:2em;
+  text-align:center;
+  text-shadow:  6px 5px #A9A9A9;
+}
+.shadow1:hover{
+    text-decoration:underline;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.profilepic{
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    border: 5px solid;
+    border-color: black;
+}
+.section1{
+    text-align: center;
+    margin-top: 20vh;
+}
+.downicon{
+    text-align: center;
+    margin: 40px;
+    transition: all 0.5s;
+}
+.downicon:hover{
+ font-size: 20px;
+}
