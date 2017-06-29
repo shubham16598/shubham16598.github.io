@@ -1,43 +1,44 @@
 .profilesection{
     height: 100vh;
     background-image:
-     -webkit-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-     -webkit-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
-  background-image:
-     -moz-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-     -moz-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
-  background-image:
-     -o-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-     -o-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
-  background-image:
-     repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-     repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+        -webkit-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+        -webkit-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+    background-image:
+        -moz-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+        -moz-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+    background-image:
+        -o-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+        -o-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+    background-image:
+        repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+        repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
 }
+
 .shadow{
-  font-family:pacifico, sans-serif;
-  font-size:12vmin;
-  text-align:center;
-  text-shadow:  6px 5px #A9A9A9;
+    font-family:pacifico, sans-serif;
+    font-size:12vmin;
+    text-align:center;
+    text-shadow:  6px 5px #A9A9A9;
 }
 .shadow1{
-  margin-top: 20px;
-  font-family:pacifico, sans-serif;
-  font-size:6vmin;
-  text-align:center;
-  text-shadow:  6px 5px #A9A9A9;
+    margin-top: 20px;
+    font-family:pacifico, sans-serif;
+    font-size:6vmin;
+    text-align:center;
+    text-shadow:  6px 5px #A9A9A9;
 }
 .shadow1:hover,.shadow:hover{
     text-shadow:  9px 7px #A9A9A9;
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
+.noselect,.profilepic{
+    -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome and Opera */
 }
 .profilepic{
     padding: 5px;
@@ -55,8 +56,22 @@
     margin-top: 20vh;
 }
 .projectsection{
+    text-align: center;
     display: inline-block;
     width: 100%;
     height: 100vh;
     background-color: black;
+}
+
+.comingsoon{
+    display: inline-block;
+    width: 50vw;
+    height: 50vh;
+    color: #fff;
+    font-size: 3em;
+    font-family:pacifico, sans-serif;
+    border: 10px solid #fff;
+    border-radius: 20px;
+    margin-top: 20%;
+    
 }
