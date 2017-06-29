@@ -1,4 +1,18 @@
-
+.profilesection{
+    height: 100vh;
+    background-image:
+     -webkit-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+     -webkit-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+  background-image:
+     -moz-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+     -moz-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+  background-image:
+     -o-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+     -o-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+  background-image:
+     repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
+     repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+}
 .shadow{
   font-family:pacifico, sans-serif;
   font-size:12vmin;
@@ -11,6 +25,9 @@
   font-size:6vmin;
   text-align:center;
   text-shadow:  6px 5px #A9A9A9;
+}
+.shadow1:hover,.shadow:hover{
+    text-shadow:  9px 7px #A9A9A9;
 }
 
 .noselect {
@@ -28,12 +45,18 @@
     height: 200px;
     border: 5px solid;
     border-color: black;
-    transition: 0.7s linear;
+    transition: 0.5s linear;
 }
 .profilepic:hover{
-    transform: scale(1.5,1.5);
+    transform: scale(1.1,1.1);
 }
 .section1{
     text-align: center;
     margin-top: 20vh;
+}
+.projectsection{
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
 }
