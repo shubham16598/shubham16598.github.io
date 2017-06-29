@@ -1,14 +1,14 @@
 
 .shadow{
   font-family:pacifico, sans-serif;
-  font-size:7em;
+  font-size:12vmin;
   text-align:center;
   text-shadow:  6px 5px #A9A9A9;
 }
 .shadow1{
   margin-top: 20px;
   font-family:pacifico, sans-serif;
-  font-size:2em;
+  font-size:6vmin;
   text-align:center;
   text-shadow:  6px 5px #A9A9A9;
 }
