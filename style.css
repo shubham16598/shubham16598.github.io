@@ -12,9 +12,7 @@
   text-align:center;
   text-shadow:  6px 5px #A9A9A9;
 }
-.shadow1:hover{
-    text-decoration:underline;
-}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -26,10 +24,14 @@
 }
 .profilepic{
     padding: 5px;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border: 5px solid;
     border-color: black;
+    transition: 0.7s linear;
+}
+.profilepic:hover{
+    transform: scale(1.5,1.5);
 }
 .section1{
     text-align: center;
