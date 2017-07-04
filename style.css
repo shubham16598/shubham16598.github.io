@@ -11,7 +11,9 @@
         -o-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
     background-image:
         repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-        repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
+        repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px),
+        -webkit-linear-gradient(140deg, #000 30%, #fff 10%);
+        
 }
 
 .shadow{
@@ -73,5 +75,5 @@
     border: 10px solid #fff;
     border-radius: 20px;
     margin-top: 20%;
-    
+
 }
