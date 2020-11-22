@@ -1,36 +1,19 @@
 .profilesection{
     height: 100vh;
-    background-image:
-        -webkit-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-        -webkit-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
-    background-image:
-        -moz-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-        -moz-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
-    background-image:
-        -o-repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-        -o-repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px);
-    background-image:
-        repeating-linear-gradient(45deg, rgba(0, 191, 255, .5), rgba(0, 191, 255, .5) 1px, transparent 1px, transparent 15px),
-        repeating-linear-gradient(-45deg, rgba(255, 105, 180, .5), rgba(255, 105, 180, .5) 1px, transparent 1px, transparent 15px),
-        -webkit-linear-gradient(140deg, #000 30%, #fff 10%);
 
 }
 
 .shadow{
+    margin-top:50px;
     font-family:pacifico, sans-serif;
-    font-size:12vmin;
+    font-size:9vmin;
     text-align:center;
-    text-shadow:  6px 5px #A9A9A9;
 }
 .shadow1{
-    margin-top: 20px;
+    margin-top: 70px;
     font-family:pacifico, sans-serif;
     font-size:6vmin;
     text-align:center;
-    text-shadow:  6px 5px #A9A9A9;
-}
-.shadow1:hover,.shadow:hover{
-    text-shadow:  9px 7px #A9A9A9;
 }
 
 .noselect,.profilepic{
@@ -53,7 +36,7 @@
 
 .section1{
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 .projectsection{
     text-align: center;
