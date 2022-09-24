@@ -1,5 +1,5 @@
 <h1 align="center">Hi 🙋‍♂️, I'm Shubham Singh Kalyanwat</h1>
-<h3 align="center">I am a Full Stack Javascript Developer</h3>
+<h3 align="center">I am a Full Stack Developer</h3>
 
 <h3 align="left">Contant me:</h3>
 <a href="https://twitter.com/shubham16598" target="_blank">
