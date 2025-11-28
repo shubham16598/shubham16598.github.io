@@ -17,27 +17,55 @@
 - 🏕 I love Trekking, Listening to Music and Stargazing (aren't they amazing? 🌟)
 - 📫 How to reach me: &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-shubham-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/shubham16598)
 
-### 🛠 &nbsp;Languages and Tools :
+### **Tech Stack & Tools**
 
-<p>
-<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/materialui/materialui-original.svg" title="Material UI" alt="Material UI" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux " width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/firebase/firebase-plain-wordmark.svg" title="Firebase" alt="Firebase" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL"  alt="MySQL" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
-<img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" title="Postman"  alt="Postman" width="40" height="40"/>&nbsp;
-</p>
+### Languages  
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+
+### Backend  
+![NodeJS](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs)
+
+### Frontend  
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![NextJS](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
+
+### Cloud & DevOps  
+![AWS](https://img.shields.io/badge/AWS-FF9900?logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions)
+
+### Databases  
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?logo=amazon-dynamodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
 
 ---
+
+### **Skill Matrix**
+
+| Category | Skills |
+|---------|--------|
+| **Backend** | Node.js, TypeScript, Microservices, Event-driven systems |
+| **Frontend** | React, Next.js, Tailwind, Component Architecture |
+| **Cloud Infra** | AWS Lambda, API Gateway, S3, SQS/SNS, EC2, IAM, DynamoDB |
+| **CI/CD** | GitHub Actions, GitLab CI, Bitbucket Pipelines, Docker |
+| **Databases** | MongoDB, DynamoDB, MySQL, Redis |
+| **AI/Automation** | Instruction-based AI pipelines, automated response generation |
+| **System Design** | Distributed systems, caching, queues, scalable APIs |
+
+---
+
     
-<h3 align="left">Stats</h3>
-<p>
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=shubham16598&show_icons=true&locale=en&layout=compact" alt="shubham16598" />
+### **Stats**
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=shubham16598&theme=tokyonight&hide_border=true"/>
 </p>
-<p>
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=shubham16598&show_icons=true&locale=en" alt="shubham16598" />
+
+<p align="center">
+  <img src="https://gh-readme-profile.vercel.app/api?username=shubham16598"/>
 </p>
+
