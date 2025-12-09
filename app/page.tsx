@@ -250,7 +250,17 @@ export default function Home() {
         >
           <div className="flex-1 space-y-8 text-center lg:text-left">
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl font-serif text-foreground">
-              hi, shubham here <span className="inline-block animate-wave origin-bottom-right">👋</span>
+              hi, shubham here <motion.span
+                className="inline-block origin-bottom-right"
+                animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  repeatDelay: 1,
+                  ease: "easeInOut"
+                }}
+              >👋</motion.span>
             </h1>
             
             <div className="space-y-4 max-w-2xl">
@@ -389,7 +399,12 @@ export default function Home() {
            <h2 className="mb-10 text-2xl font-serif font-bold text-foreground">Recommendations</h2>
            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {recommendations.map((rec, idx) => (
-              <div key={idx} className="break-inside-avoid rounded-xl border border-border/50 bg-card p-6 shadow-sm transition-all hover:shadow-md hover:border-border/80 relative">
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.02, rotate: idx % 2 === 0 ? 1 : -1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="break-inside-avoid rounded-xl border border-border/50 bg-stone-50/50 dark:bg-stone-900/30 p-6 shadow-sm hover:shadow-lg hover:border-border/80 relative"
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <Avatar className="h-10 w-10 border border-border/50">
                     <AvatarFallback className="text-xs bg-primary/10 text-primary font-semibold">{rec.initials}</AvatarFallback>
@@ -402,7 +417,7 @@ export default function Home() {
                 <p className="text-sm text-foreground/90 leading-relaxed relative z-10">
                   {rec.text}
                 </p>
-              </div>
+              </motion.div>
             ))}
            </div>
         </motion.section>
