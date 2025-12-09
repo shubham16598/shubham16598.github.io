@@ -9,6 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { RecommendationStack } from "@/components/recommendation-stack";
 
 // Data
 const skills = [
@@ -211,7 +212,7 @@ export default function Home() {
           <Link href="/" className="font-bold text-xl tracking-tight font-serif">ssk.</Link>
         </div>
 
-        <ul className="flex items-center gap-6 sm:gap-8 text-sm font-medium text-muted-foreground mx-auto">
+        <ul className="flex items-center gap-3 sm:gap-8 text-xs sm:text-sm font-medium text-muted-foreground mx-auto">
           <li>
             <Link href="#" className="hover:text-foreground transition-colors">home</Link>
           </li>
@@ -226,7 +227,7 @@ export default function Home() {
           </li>
         </ul>
 
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 flex justify-end shrink-0">
           <Button
             variant="ghost"
             size="icon"
@@ -330,19 +331,21 @@ export default function Home() {
 
               <div className="space-y-16">
                 {experience.map((job, idx) => (
-                  <div key={idx} className="flex gap-6 group">
-                    <Avatar className="h-14 w-14 border border-border mt-1 shrink-0 shadow-sm bg-white">
+                  <div key={idx} className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 sm:gap-x-6 group">
+                    <Avatar className="h-14 w-14 border border-border mt-1 shrink-0 shadow-sm bg-white col-start-1 row-start-1">
                       <AvatarImage src={job.logo} alt={job.company} className="object-cover" />
                       <AvatarFallback className="text-sm bg-secondary">{job.initials}</AvatarFallback>
                     </Avatar>
                     
-                    <div className="flex-1 space-y-2">
-                       <div className="flex items-center justify-between mb-1">
-                         <h3 className="text-xl font-bold text-foreground font-serif leading-tight">{job.company}</h3>
-                         <span className="text-xs font-medium text-muted-foreground bg-secondary/20 px-3 py-1 rounded-full whitespace-nowrap ml-2">{job.date}</span>
+                    <div className="col-start-2 row-start-1">
+                      <div className="flex items-start justify-between gap-2 mb-0.5">
+                        <h3 className="text-lg sm:text-xl font-bold text-foreground font-serif leading-tight">{job.company}</h3>
+                        <span className="text-[10px] sm:text-xs font-medium text-muted-foreground bg-secondary/30 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0 border border-border/50">{job.date}</span>
                        </div>
-                       <div className="text-base font-medium text-primary/90">{job.role}</div>
-                       <ul className="list-disc list-outside ml-4 space-y-1.5 text-muted-foreground/90 leading-relaxed text-sm pt-1">
+                      <div className="text-sm sm:text-base font-medium text-primary/90">{job.role}</div>
+                    </div>
+
+                    <ul className="col-start-1 col-span-2 sm:col-start-2 sm:col-span-1 list-disc list-outside ml-4 space-y-1.5 text-muted-foreground/90 leading-relaxed text-sm pt-2">
                          {Array.isArray(job.description) ? (
                            job.description.map((desc, i) => (
                              <li key={i} className="pl-1 marker:text-muted-foreground/40">{desc}</li>
@@ -350,8 +353,7 @@ export default function Home() {
                          ) : (
                            <li>{job.description}</li>
                          )}
-                       </ul>
-                    </div>
+                    </ul>
                   </div>
                 ))}
               </div>
@@ -394,10 +396,17 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="mb-32"
+          className="mb-16 sm:mb-32"
         >
            <h2 className="mb-10 text-2xl font-serif font-bold text-foreground">Recommendations</h2>
-           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+
+          {/* Mobile Stack View */}
+          <div className="block lg:hidden">
+            <RecommendationStack items={recommendations} />
+          </div>
+
+          {/* Desktop Masonry Grid */}
+          <div className="hidden lg:block columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {recommendations.map((rec, idx) => (
               <motion.div
                 key={idx}
