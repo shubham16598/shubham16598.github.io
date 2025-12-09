@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowUpRight, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight, FileText, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 // Data
 const skills = [
@@ -192,12 +194,24 @@ const projects = [
 ];
 
 export default function Home() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center py-6 backdrop-blur-md bg-background/80">
-        <ul className="flex items-center gap-8 text-sm font-medium text-muted-foreground">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 backdrop-blur-md bg-background/80 max-w-5xl mx-auto left-0 right-0">
+        {/* Logo or Home Link for mobile realignment if needed, or keeping centered list */}
+        <div className="flex-1 hidden sm:block">
+          <Link href="/" className="font-bold text-xl tracking-tight font-serif">ssk.</Link>
+        </div>
+
+        <ul className="flex items-center gap-6 sm:gap-8 text-sm font-medium text-muted-foreground mx-auto">
           <li>
             <Link href="#" className="hover:text-foreground transition-colors">home</Link>
           </li>
@@ -211,6 +225,18 @@ export default function Home() {
             <Link href="mailto:shubham16598@gmail.com" className="hover:text-foreground transition-colors">contact</Link>
           </li>
         </ul>
+
+        <div className="flex-1 flex justify-end">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="rounded-full"
+          >
+            {mounted && theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </div>
       </nav>
 
       <main className="mx-auto max-w-5xl px-6 pt-32 pb-24">
@@ -228,11 +254,8 @@ export default function Home() {
             </h1>
             
             <div className="space-y-4 max-w-2xl">
-              <p className="text-xl font-medium text-foreground">
-                 27 yo software engineer from India 🇮🇳
-              </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Associate Lead Engineer with 6+ years of experience architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the JavaScript ecosystem (React, Next.js, Node.js) and Cloud DevOps (AWS, Docker, Kubernetes).
+                I am a full-stack software engineer with 6+ years of experience architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the JavaScript ecosystem (React, Next.js, Node.js) and Cloud DevOps (AWS, Docker, Kubernetes).
                 Currently architecting offline-first media platforms at <span className="font-semibold text-foreground">AirFi</span>.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
