@@ -35,7 +35,7 @@ const skills = [
   { name: "Docker", logo: "https://cdn.simpleicons.org/docker", type: "tech" },
   { name: "Kubernetes", logo: "https://cdn.simpleicons.org/kubernetes", type: "tech" },
   { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform", type: "tech" },
-  { name: "AWS (EC2, S3, Lambda)", logo: "https://cdn.simpleicons.org/amazonaws", type: "tech" },
+  { name: "AWS (EC2, S3, Lambda)", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/AWS_Simple_Icons_AWS_Cloud.svg", type: "tech" },
   { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions", type: "tech" },
   { name: "Jenkins", logo: "https://cdn.simpleicons.org/jenkins", type: "tech" },
   { name: "Travis CI", logo: "https://cdn.simpleicons.org/travisci", type: "tech" },
