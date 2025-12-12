@@ -141,13 +141,13 @@ const recommendations = [
     text: "Shubham is a highly capable full-stack JavaScript developer who consistently delivers quality work. He's strong in both frontend and backend development, communicates clearly, and approaches every task with ownership.",
     initials: "RK"
   },
-   {
+  {
     name: "Alister Cabral",
     role: "Senior Software Engineer at Quartzy",
     text: "I had the pleasure of working with Shubham for over a year... He consistently delivered high-quality work, approached challenges with determination, and upheld strong professional ethics throughout.",
     initials: "AC"
   },
-   {
+  {
     name: "Wesley de Louw",
     role: "Marketing Representative",
     text: "Shubham is an outstanding software engineer with an eye for detail and a heart for his colleagues. Shubham was always at the forefront of assisting his colleagues wherever needed and consistently provided remarkable quality work.",
@@ -234,7 +234,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
-      
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 backdrop-blur-md bg-background/80 max-w-5xl mx-auto left-0 right-0">
         {/* Logo or Home Link for mobile realignment if needed, or keeping centered list */}
@@ -271,15 +271,15 @@ export default function Home() {
       </nav>
 
       <main className="mx-auto max-w-5xl px-6 pt-32 pb-24">
-        
+
         {/* Header / Hero */}
-        <motion.header 
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between gap-12 mb-32"
+          className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 mb-16"
         >
-          <div className="flex-1 space-y-8 text-center lg:text-left">
+          <div className="flex-1 space-y-8 text-center lg:text-left w-full">
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl font-serif text-foreground">
               hi, <span className="relative inline-block">
                 <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 -rotate-1 opacity-70"></span>
@@ -296,10 +296,26 @@ export default function Home() {
                 }}
               >👋</motion.span>
             </h1>
-            
-            <div className="space-y-4 max-w-2xl">
+
+            {/* Image on mobile - between title and description */}
+            <div className="lg:hidden flex justify-center">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-3xl rotate-6 scale-95 opacity-50 blur-sm transition-transform group-hover:rotate-12 duration-500" />
+                <div className="relative h-32 w-32 overflow-hidden rounded-3xl shadow-2xl rotate-3 transition-transform group-hover:rotate-6 duration-500">
+                  <Image
+                    src="/image.jpeg"
+                    alt="Shubham Singh Kalyanwat"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4 max-w-2xl mx-auto lg:mx-0">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I am a full-stack software engineer with <span className="font-semibold text-foreground">6+ years of experience</span> architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the JavaScript ecosystem (React, Next.js, Node.js) and Cloud DevOps (AWS, Docker, Kubernetes).
+                I am a full-stack software engineer with <span className="font-semibold text-foreground">6+ years of experience</span> architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the <span className="font-semibold text-foreground">JavaScript ecosystem (React, Next.js, Node.js)</span> and <span className="font-semibold text-foreground">Cloud DevOps (AWS, Docker, Kubernetes)</span>.
                 Currently architecting offline-first media platforms at <span className="font-semibold text-foreground underline">AirFi</span>.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -308,13 +324,13 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center lg:justify-start gap-4 pt-4">
-               {/* Resume Button */}
+              {/* Resume Button */}
               <Button asChild className="rounded-full h-11 px-6 bg-foreground text-background hover:bg-foreground/90 transition-all shadow-md group">
                 <Link href="/Shubham_Singh_Resume.pdf" target="_blank">
                   Resume <FileText className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
                 </Link>
               </Button>
-              
+
               {/* Social Icons */}
               <div className="flex items-center gap-4 px-2">
                 <Link href="https://www.linkedin.com/in/shubham16598/" target="_blank" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110 p-2">
@@ -330,10 +346,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Rotated Image Card */}
-          <div className="relative group">
+          {/* Image on desktop - side by side */}
+          <div className="hidden lg:block relative group">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-3xl rotate-6 scale-95 opacity-50 blur-sm transition-transform group-hover:rotate-12 duration-500" />
-            <div className="relative h-32 w-32 sm:h-60 sm:w-60 overflow-hidden rounded-3xl border-4 border-background shadow-2xl rotate-3 transition-transform group-hover:rotate-6 duration-500">
+            <div className="relative h-60 w-60 overflow-hidden rounded-3xl shadow-2xl rotate-3 transition-transform group-hover:rotate-6 duration-500">
               <Image
                 src="/image.jpeg"
                 alt="Shubham Singh Kalyanwat"
@@ -345,10 +361,10 @@ export default function Home() {
           </div>
         </motion.header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24 mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24 mb-16">
           {/* Main Content Column (Experience) */}
           <div className="lg:col-span-2 space-y-24">
-             {/* Experience Tab-style Header */}
+            {/* Experience Tab-style Header */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -357,9 +373,9 @@ export default function Home() {
               <div className="flex items-center gap-8 mb-12">
                 <h2 className="text-2xl font-serif font-bold text-foreground">
                   <span className="border-b-4 border-orange-200 dark:border-orange-800 pb-1">Work</span> Experience
-                 </h2>
-                 {/* Placeholder for Education if added later */}
-                 {/* <h2 className="text-xl font-serif font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer px-2">Education</h2> */}
+                </h2>
+                {/* Placeholder for Education if added later */}
+                {/* <h2 className="text-xl font-serif font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer px-2">Education</h2> */}
               </div>
 
               <div className="space-y-16">
@@ -369,23 +385,23 @@ export default function Home() {
                       <AvatarImage src={job.logo} alt={job.company} className="object-cover" />
                       <AvatarFallback className="text-sm bg-secondary">{job.initials}</AvatarFallback>
                     </Avatar>
-                    
+
                     <div className="col-start-2 row-start-1">
                       <div className="flex items-start justify-between gap-2 mb-0.5">
                         <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight">{job.company}</h3>
                         <span className="text-[10px] sm:text-xs font-medium text-muted-foreground bg-secondary/30 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0 border border-border/50">{job.date}</span>
-                       </div>
+                      </div>
                       <div className="text-sm sm:text-base font-medium text-primary/90">{job.role}</div>
                     </div>
 
                     <ul className="col-start-1 col-span-2 sm:col-start-2 sm:col-span-1 list-disc list-outside ml-4 space-y-1.5 text-muted-foreground/90 leading-relaxed text-sm pt-2">
-                         {Array.isArray(job.description) ? (
-                           job.description.map((desc, i) => (
-                             <li key={i} className="pl-1 marker:text-muted-foreground/40">{desc}</li>
-                           ))
-                         ) : (
-                           <li>{job.description}</li>
-                         )}
+                      {Array.isArray(job.description) ? (
+                        job.description.map((desc, i) => (
+                          <li key={i} className="pl-1 marker:text-muted-foreground/40">{desc}</li>
+                        ))
+                      ) : (
+                        <li>{job.description}</li>
+                      )}
                     </ul>
                   </div>
                 ))}
@@ -405,19 +421,19 @@ export default function Home() {
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <Badge key={skill.name} variant="outline" className="flex items-center gap-2 rounded-md px-3 py-1.5 font-medium text-sm hover:bg-secondary/50 transition-colors cursor-default border-border/60 bg-background/50 backdrop-blur-sm">
-                 {skill.type === "tech" && (
-                   <img src={skill.logo} alt={skill.name} className="w-4 h-4 object-contain" />
-                 )}
-                 {skill.type === "icon" && (
-                      skill.logo === "Globe" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe w-4 h-4 text-blue-500"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> :
-                      skill.logo === "Server" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-server w-4 h-4 text-green-500"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg> :
-                      skill.logo === "Layout" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layout w-4 h-4 text-purple-500"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/></svg> :
-                      skill.logo === "Code" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code w-4 h-4 text-orange-500"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> :
-                      skill.logo === "Users" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users w-4 h-4 text-indigo-500"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> : null
-                 )}
-                {skill.name}
-              </Badge>
-            ))}
+                    {skill.type === "tech" && (
+                      <img src={skill.logo} alt={skill.name} className="w-4 h-4 object-contain" />
+                    )}
+                    {skill.type === "icon" && (
+                      skill.logo === "Globe" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe w-4 h-4 text-blue-500"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg> :
+                        skill.logo === "Server" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-server w-4 h-4 text-green-500"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" /></svg> :
+                          skill.logo === "Layout" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layout w-4 h-4 text-purple-500"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><line x1="3" x2="21" y1="9" y2="9" /><line x1="9" x2="9" y1="21" y2="9" /></svg> :
+                            skill.logo === "Code" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code w-4 h-4 text-orange-500"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg> :
+                              skill.logo === "Users" ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users w-4 h-4 text-indigo-500"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg> : null
+                    )}
+                    {skill.name}
+                  </Badge>
+                ))}
               </div>
             </motion.section>
           </div>
@@ -429,10 +445,12 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="mb-16 sm:mb-32"
+          className="mb-12 sm:mb-16"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
-            <h2 className="text-2xl font-serif font-bold text-foreground">Recommendations</h2>
+            <h2 className="text-2xl font-serif font-bold text-foreground">
+              <span className="border-b-4 border-green-200 dark:border-green-800 pb-1">Recommendations</span>
+            </h2>
             <Link
               href="https://www.linkedin.com/in/shubham16598/details/recommendations/?detailScreenTabIndex=0"
               target="_blank"
@@ -470,7 +488,7 @@ export default function Home() {
                 </p>
               </motion.div>
             ))}
-           </div>
+          </div>
         </motion.section>
 
         {/* Projects Grid */}
@@ -485,7 +503,7 @@ export default function Home() {
               <h2 className="text-2xl font-serif font-bold text-foreground">
                 <span className="border-b-4 border-blue-200 dark:border-blue-800 pb-1">Selected</span> Projects
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 A collection of high-impact applications I've engineered, featuring complex data visualization, real-time performance, and seamless user experiences.
               </p>
             </div>
@@ -534,7 +552,7 @@ export default function Home() {
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-8 space-y-6">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground">{project.title}</h3>
                     <div className="flex gap-3">
                       {project.repo && (
                         <Link
@@ -557,7 +575,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <p className="text-muted-foreground leading-relaxed flex-1">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed flex-1">
                     {project.description}
                   </p>
 
@@ -578,12 +596,12 @@ export default function Home() {
         </motion.section>
 
         {/* Footer */}
-        <footer className="mt-32 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground gap-4">
+        <footer className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground gap-4">
           <p>© {new Date().getFullYear()} Shubham Singh Kalyanwat.</p>
           <div className="flex gap-6">
-               <Link href="https://github.com/shubham16598" className="hover:text-foreground transition-colors">GitHub</Link>
-               <Link href="https://www.linkedin.com/in/shubham16598/" className="hover:text-foreground transition-colors">LinkedIn</Link>
-               <Link href="mailto:shubham16598@gmail.com" className="hover:text-foreground transition-colors">Email</Link>
+            <Link href="https://github.com/shubham16598" className="hover:text-foreground transition-colors">GitHub</Link>
+            <Link href="https://www.linkedin.com/in/shubham16598/" className="hover:text-foreground transition-colors">LinkedIn</Link>
+            <Link href="mailto:shubham16598@gmail.com" className="hover:text-foreground transition-colors">Email</Link>
           </div>
         </footer>
       </main>
