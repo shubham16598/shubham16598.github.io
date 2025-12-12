@@ -170,29 +170,59 @@ const recommendations = [
 const projects = [
   {
     title: "Stay-Inn",
-    description: "Hotel Booking App with Ionic 3 & Firestore.",
+    description: "Hotel Booking App built with Ionic 3 & Angular. Features complex search filtering, real-time availability checking, and secure payment processing.",
+    category: "TRAVEL",
+    tech: ["Ionic", "Angular", "Firebase"],
     link: "http://hotel-app-a53e7.firebaseapp.com/",
-    image: "/projects/stayinn.png"
+    // repo removed as per request
+    image: "/projects/stayinn.png",
+    bgColor: "#E0F2FE" // Light blue
   },
   {
     title: "AutoDeploy",
-    description: "Modern CI/CD pipeline implementation.",
+    description: "Modern CI/CD pipeline implementation demonstrating automated testing, build processes, and containerized deployment strategies.",
+    category: "DEVOPS",
+    tech: ["GitHub Actions", "Docker", "Node.js"],
     link: "https://github.com/shubham16598/CICD-Autodeploy",
-    image: "/projects/autodeploy.png"
+    repo: "https://github.com/shubham16598/CICD-Autodeploy",
+    image: "/projects/autodeploy.png",
+    bgColor: "#F0FDF4" // Light green
   },
   {
     title: "Vidjot",
-    description: "Idea management app with heavy backend logic.",
+    description: "Idea management SaaS application allowing users to track video ideas. Includes authentication, data storage, and rich text editing.",
+    category: "SAAS",
+    tech: ["Node.js", "Express", "MongoDB"],
     link: "https://pure-bastion-84144.herokuapp.com/",
-    image: "/projects/vidjot.png"
+    // repo removed as per request
+    image: "/projects/vidjot.png",
+    bgColor: "#FFF7ED" // Light orange
   },
-   {
+  {
     title: "MovieWall",
-    description: "Movie discovery web application.",
+    description: "Interactive movie discovery platform consuming the TMDB API. Features infinite scrolling, searching, and dynamic detail views.",
+    category: "ENTERTAINMENT",
+    tech: ["React", "TMDB API", "CSS Modules"],
     link: "https://github.com/shubham16598/MovieWall",
-    image: "/projects/moviewall.jpeg"
+    repo: "https://github.com/shubham16598/MovieWall",
+    image: "/projects/moviewall.jpeg",
+    bgColor: "#FAF5FF" // Light purple
   }
 ];
+
+const techColors: Record<string, string> = {
+  "Ionic": "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+  "Angular": "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+  "Firebase": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
+  "GitHub Actions": "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
+  "Docker": "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400",
+  "Node.js": "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+  "Express": "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
+  "MongoDB": "bg-green-50 text-green-600 dark:bg-green-900/20 dark:text-green-400",
+  "React": "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400",
+  "TMDB API": "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300",
+  "CSS Modules": "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
+};
 
 export default function Home() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -209,7 +239,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 backdrop-blur-md bg-background/80 max-w-5xl mx-auto left-0 right-0">
         {/* Logo or Home Link for mobile realignment if needed, or keeping centered list */}
         <div className="flex-1 hidden sm:block">
-          <Link href="/" className="font-bold text-xl tracking-tight font-serif">ssk.</Link>
+          <Link href="/" className="font-bold text-xl tracking-tight">ssk.</Link>
         </div>
 
         <ul className="flex items-center gap-3 sm:gap-8 text-xs sm:text-sm font-medium text-muted-foreground mx-auto">
@@ -251,7 +281,10 @@ export default function Home() {
         >
           <div className="flex-1 space-y-8 text-center lg:text-left">
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl font-serif text-foreground">
-              hi, shubham here <motion.span
+              hi, <span className="relative inline-block">
+                <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 -rotate-1 opacity-70"></span>
+                <span className="relative z-10">shubham</span>
+              </span> here <motion.span
                 className="inline-block origin-bottom-right"
                 animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
                 transition={{
@@ -266,8 +299,8 @@ export default function Home() {
             
             <div className="space-y-4 max-w-2xl">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I am a full-stack software engineer with 6+ years of experience architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the JavaScript ecosystem (React, Next.js, Node.js) and Cloud DevOps (AWS, Docker, Kubernetes).
-                Currently architecting offline-first media platforms at <span className="font-semibold text-foreground">AirFi</span>.
+                I am a full-stack software engineer with <span className="font-semibold text-foreground">6+ years of experience</span> architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the JavaScript ecosystem (React, Next.js, Node.js) and Cloud DevOps (AWS, Docker, Kubernetes).
+                Currently architecting offline-first media platforms at <span className="font-semibold text-foreground underline">AirFi</span>.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I love open source, trekking 🏔️, and stargazing 🌟.
@@ -300,7 +333,7 @@ export default function Home() {
           {/* Rotated Image Card */}
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-3xl rotate-6 scale-95 opacity-50 blur-sm transition-transform group-hover:rotate-12 duration-500" />
-            <div className="relative h-48 w-48 sm:h-60 sm:w-60 overflow-hidden rounded-3xl border-4 border-background shadow-2xl rotate-3 transition-transform group-hover:rotate-6 duration-500">
+            <div className="relative h-32 w-32 sm:h-60 sm:w-60 overflow-hidden rounded-3xl border-4 border-background shadow-2xl rotate-3 transition-transform group-hover:rotate-6 duration-500">
               <Image
                 src="/image.jpeg"
                 alt="Shubham Singh Kalyanwat"
@@ -321,9 +354,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="flex items-center gap-8 mb-12 border-b border-border/40 pb-4">
-                 <h2 className="text-2xl font-serif font-bold text-foreground border-b-2 border-foreground pb-4 -mb-4.5 px-2">
-                   Work Experience
+              <div className="flex items-center gap-8 mb-12">
+                <h2 className="text-2xl font-serif font-bold text-foreground">
+                  <span className="border-b-4 border-orange-200 dark:border-orange-800 pb-1">Work</span> Experience
                  </h2>
                  {/* Placeholder for Education if added later */}
                  {/* <h2 className="text-xl font-serif font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer px-2">Education</h2> */}
@@ -339,7 +372,7 @@ export default function Home() {
                     
                     <div className="col-start-2 row-start-1">
                       <div className="flex items-start justify-between gap-2 mb-0.5">
-                        <h3 className="text-lg sm:text-xl font-bold text-foreground font-serif leading-tight">{job.company}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight">{job.company}</h3>
                         <span className="text-[10px] sm:text-xs font-medium text-muted-foreground bg-secondary/30 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0 border border-border/50">{job.date}</span>
                        </div>
                       <div className="text-sm sm:text-base font-medium text-primary/90">{job.role}</div>
@@ -398,7 +431,16 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="mb-16 sm:mb-32"
         >
-           <h2 className="mb-10 text-2xl font-serif font-bold text-foreground">Recommendations</h2>
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
+            <h2 className="text-2xl font-serif font-bold text-foreground">Recommendations</h2>
+            <Link
+              href="https://www.linkedin.com/in/shubham16598/details/recommendations/?detailScreenTabIndex=0"
+              target="_blank"
+              className="group flex items-center gap-2 text-primary font-semibold hover:text-primary/80 transition-colors whitespace-nowrap"
+            >
+              Verify on LinkedIn <ArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </Link>
+          </div>
 
           {/* Mobile Stack View */}
           <div className="block lg:hidden">
@@ -438,31 +480,99 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h2 className="mb-10 text-2xl font-serif font-bold text-foreground">Selected Works</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-8">
+            <div className="space-y-4 max-w-2xl">
+              <h2 className="text-2xl font-serif font-bold text-foreground">
+                <span className="border-b-4 border-blue-200 dark:border-blue-800 pb-1">Selected</span> Projects
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A collection of high-impact applications I've engineered, featuring complex data visualization, real-time performance, and seamless user experiences.
+              </p>
+            </div>
+
+            <Link
+              href="https://github.com/shubham16598"
+              target="_blank"
+              className="group flex items-center gap-2 text-primary font-semibold hover:text-primary/80 transition-colors whitespace-nowrap mb-1 shrink-0"
+            >
+              See GitHub <ArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-2">
             {projects.map((project, idx) => (
-              <Link
+              <motion.div
                 key={idx}
-                href={project.link}
-                target="_blank"
-                className="group block space-y-4"
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="group flex flex-col rounded-[2rem] border border-border/50 bg-card overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative aspect-video overflow-hidden rounded-2xl bg-border/50 ring-1 ring-border/50 shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:scale-[1.02]">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="px-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold text-foreground text-lg font-serif group-hover:underline decoration-border underline-offset-4 transition-all">{project.title}</h3>
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                {/* Visual Header */}
+                <div
+                  className="relative h-64 w-full p-8 flex items-center justify-center overflow-hidden"
+                  style={{ backgroundColor: project.bgColor }}
+                >
+                  {/* Category Badge */}
+                  <span className="absolute top-6 right-6 z-20 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold tracking-wider rounded-full text-foreground shadow-sm">
+                    {project.category}
+                  </span>
+
+                  {/* Image Container */}
+                  <div className="relative h-full w-full shadow-2xl rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top"
+                    />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">{project.description}</p>
+
+                  {/* Overlay for specific dark mode adjustment if needed */}
+                  <div className="absolute inset-0 bg-black/5 dark:bg-black/20 pointer-events-none" />
                 </div>
-              </Link>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 p-8 space-y-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+                    <div className="flex gap-3">
+                      {project.repo && (
+                        <Link
+                          href={project.repo}
+                          target="_blank"
+                          className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors"
+                          title="View Code"
+                        >
+                          <Github className="h-4 w-4" />
+                        </Link>
+                      )}
+                      <Link
+                        href={project.link}
+                        target="_blank"
+                        className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors"
+                        title="Live Demo"
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+
+                  <p className="text-muted-foreground leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className={`px-3 py-1 text-xs font-medium rounded-md border border-border/50 ${techColors[t] || "bg-secondary/50 text-secondary-foreground"}`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.section>
