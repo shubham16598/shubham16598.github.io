@@ -193,7 +193,7 @@ const projects = [
     description: "Idea management SaaS application allowing users to track video ideas. Includes authentication, data storage, and rich text editing.",
     category: "SAAS",
     tech: ["Node.js", "Express", "MongoDB"],
-    link: "https://pure-bastion-84144.herokuapp.com/",
+    // link: "https://pure-bastion-84144.herokuapp.com/",
     // repo removed as per request
     image: "/projects/vidjot.png",
     bgColor: "#FFF7ED" // Light orange
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="space-y-4 max-w-2xl mx-auto lg:mx-0">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I am a full-stack software engineer with <span className="font-semibold text-foreground">6+ years of experience</span> architecting high-scale full-stack systems and optimizing developer workflows. I specialize in the <span className="font-semibold text-foreground">JavaScript ecosystem (React, Next.js, Node.js)</span> and <span className="font-semibold text-foreground">Cloud DevOps (AWS, Docker, Kubernetes)</span>.
-                Currently architecting offline-first media platforms at <span className="font-semibold text-foreground underline">AirFi</span>.
+                Currently architecting offline-first media platforms at <Link href="https://www.linkedin.com/company/airfi/posts/?feedView=all" target="_blank" className="font-semibold text-foreground underline hover:text-primary transition-colors">AirFi</Link>.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I love open source, trekking 🏔️, and stargazing 🌟.
@@ -388,7 +388,15 @@ export default function Home() {
 
                     <div className="col-start-2 row-start-1">
                       <div className="flex items-start justify-between gap-2 mb-0.5">
-                        <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight">{job.company}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
+                          {job.company === "AirFi Aviation" ? (
+                            <Link href="https://www.linkedin.com/company/airfi/posts/?feedView=all" target="_blank" className="hover:text-primary transition-colors">
+                              {job.company}
+                            </Link>
+                          ) : (
+                            job.company
+                          )}
+                        </h3>
                         <span className="text-[10px] sm:text-xs font-medium text-muted-foreground bg-secondary/30 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0 border border-border/50">{job.date}</span>
                       </div>
                       <div className="text-sm sm:text-base font-medium text-primary/90">{job.role}</div>
@@ -564,14 +572,16 @@ export default function Home() {
                           <Github className="h-4 w-4" />
                         </Link>
                       )}
-                      <Link
-                        href={project.link}
-                        target="_blank"
-                        className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors"
-                        title="Live Demo"
-                      >
-                        <ArrowUpRight className="h-4 w-4" />
-                      </Link>
+                      {project.link && (
+                        <Link
+                          href={project.link}
+                          target="_blank"
+                          className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors"
+                          title="Live Demo"
+                        >
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Link>
+                      )}
                     </div>
                   </div>
 
